@@ -7,14 +7,14 @@
 
 ## The Data
 <br> The data set used in this study contains real messages sent during disaster events. It consists of more than 26,000 messages with 36 categories. The data is provided by [Appen](https://appen.com/) formally <i>Figure 8</i> to build a model for an API that classifies disaster messages.  
-<br>
-<br> [messages](https://github.com/snejadi/Disaster-response/blob/e742fb0e32729cf6b2a5417f5937afc5bbd14a8c/data/disaster_messages.csv)
-<br> [categories](https://github.com/snejadi/Disaster-response/blob/e742fb0e32729cf6b2a5417f5937afc5bbd14a8c/data/disaster_categories.csv)
+  - [messages](https://github.com/snejadi/Disaster-response/blob/e742fb0e32729cf6b2a5417f5937afc5bbd14a8c/data/disaster_messages.csv)
+  - [categories](https://github.com/snejadi/Disaster-response/blob/e742fb0e32729cf6b2a5417f5937afc5bbd14a8c/data/disaster_categories.csv)
 <br> 
 <br> The following bar chart shows the distribution of data among different categories:
-![Figure_01]()
+![Figure_01](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_01.png)
+<br>
 <br> The following bar chart shows different message categories and the relative frequency distribution of text data belonging to each category:
-![Figure_02]()
+![Figure_02](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_02.png)
 
 ## Analysis
 <br> This project involve three different componenets:
