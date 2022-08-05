@@ -11,10 +11,10 @@
   - [categories](https://github.com/snejadi/Disaster-response/blob/e742fb0e32729cf6b2a5417f5937afc5bbd14a8c/data/disaster_categories.csv)
 <br> 
 <br> The following bar chart shows the distribution of data among different categories:
-![Figure_01](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_01.png)
+![Figure_01](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_01.png?raw=true)
 <br>
 <br> The following bar chart shows different message categories and the relative frequency distribution of text data belonging to each category:
-![Figure_02](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_02.png)
+![Figure_02](https://github.com/snejadi/Disaster-response/blob/91e28a272dea3df3e1f6fbbac14e8d96b3a604e8/figures/fig_02.png?raw=true)
 
 ## Analysis
 <br> This project involve three different componenets:
