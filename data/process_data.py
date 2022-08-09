@@ -50,7 +50,7 @@ def clean_data(df):
     category_col_names = row.astype(str).str[:-2]
     # rename/assign column names for categories
     categories.columns = category_col_names
-    
+  
     # step 3
     # set category values as the last character of the string
     for column in categories:
@@ -66,6 +66,11 @@ def clean_data(df):
     # drop duplicates
     df.drop_duplicates(inplace=True)
 
+    # step 6    
+    # the 'df.related' column has three distinc values, 0, 1, and 2
+    # dropping 2, as it doesn't make sense
+    df.drop(df[df.related == 2].index, inplace=True)
+
     return df
 
 
@@ -79,7 +84,11 @@ def save_data(df, database_filename):
     '''
 
     engine = create_engine('sqlite:///{}'.format(database_filename))
-    df.to_sql('Disaster_Response_Table', engine, index=False)  
+    df.to_sql('Disaster_Response_Table'
+              , con=engine
+              , if_exists='replace'
+              , index=False
+              )
 
 
 def main():

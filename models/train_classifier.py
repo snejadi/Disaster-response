@@ -12,9 +12,10 @@ from nltk import pos_tag
 from sklearn.pipeline import Pipeline
 from sklearn.multioutput import MultiOutputClassifier
 from sklearn.ensemble import RandomForestClassifier
+from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.feature_extraction.text import TfidfTransformer
-from sklearn.model_selection import train_test_split
+from sklearn.model_selection import train_test_split, GridSearchCV
 from sklearn.metrics import classification_report
 
 # nltk.download()
@@ -95,14 +96,30 @@ def build_model():
         Args: None            
         Returns: modeling pipeline            
     '''
-    pipeline = Pipeline([
-        ('vect', CountVectorizer(tokenizer = tokenize)), 
-        ('tfidf', TfidfTransformer()),
-        # ('t_svd', TruncatedSVD(n_components=100, n_iter=10, random_state=42)),
-        ('clf', MultiOutputClassifier(RandomForestClassifier()))],
-        verbose=True)
+    clf = RandomForestClassifier()
     
-    return pipeline
+    pipeline = Pipeline(
+        [
+            ('vect', CountVectorizer(tokenizer = tokenize))
+            , ('tfidf', TfidfTransformer())
+            , ('t_svd', TruncatedSVD(n_iter=10, random_state=42))
+            , ('clf', MultiOutputClassifier(clf))
+            ]
+        , verbose=True)
+    
+    # specify parameters for grid search
+    search_space = {
+        't_svd__n_components':[5, 35]
+        , 'clf__estimator__n_estimators':[10, 50, 100]
+        }
+    
+    # create grid search object
+    cv = GridSearchCV(pipeline
+                      , param_grid=search_space
+                      , verbose=2
+                      )
+    
+    return cv
 
 
 def evaluate_model(model, X_test, Y_test, category_names):
